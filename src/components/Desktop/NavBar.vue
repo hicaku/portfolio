@@ -8,11 +8,11 @@ const { toggleMinimized } = store;
 </script>
 <template>
     <div class="navbar">
-        <img class="navbar__logo" src="logo.png" alt="Logo" />
+        <img class="navbar__logo" src="@/assets/images/logo.png" alt="Logo" />
         <div class="navbar__search">
             <img
                 class="navbar__search-icon"
-                src="search-icon.png"
+                src="@/assets/images/search-icon.png"
                 alt="Search"
             />
             <input
@@ -37,8 +37,8 @@ const { toggleMinimized } = store;
             </p>
         </div>
         <div class="navbar__settings">
-            <img src="wifi.png" alt="wifi" />
-            <img src="eng.png" alt="ENG" />
+            <img src="@/assets/images/wifi.png" alt="wifi" />
+            <img src="@/assets/images/eng.png" alt="ENG" />
         </div>
     </div>
 </template>
