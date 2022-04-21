@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "README",
+        "extention": "txt",
+        "icon": "readme.png",
+        "type": "text"
+    },
+    {
+        "id": 2,
+        "name": "SETUP",
+        "extention": "exe",
+        "icon": "setup.png",
+        "type": "setup"
+    },
+    {
+        "id": 3,
+        "name": "Infinite Wordle",
+        "extention": "exe",
+        "icon": "infinite-wordle.png",
+        "type": "project",
+        "url": "https://wordle.hicaku.com/"
+    },
+    {
+        "id": 4,
+        "name": "Hibu",
+        "extention": "exe",
+        "icon": "hibu.png",
+        "type": "project",
+        "url": "https://hibu.hicaku.com/"
+    },
+    {
+        "id": 5,
+        "name": "Earthquakes",
+        "extention": "exe",
+        "icon": "earthquakes.png",
+        "type": "project",
+        "url": "https://earthquakes.hicaku.com/"
+    },
+    {
+        "id": 6,
+        "name": "NBA",
+        "extention": "exe",
+        "icon": "nba.png",
+        "type": "project",
+        "url": "https://nba.hicaku.com/"
+    },
+    {
+        "id": 7,
+        "name": "Calculator",
+        "extention": "exe",
+        "icon": "calculator.png",
+        "type": "project",
+        "url": "https://calculator.hicaku.com/"
+    },
+    {
+        "id": 8,
+        "name": "Tictactoe",
+        "extention": "exe",
+        "icon": "tictactoe.png",
+        "type": "project",
+        "url": "https://tictactoe.hicaku.com/"
+    },
+    {
+        "id": 9,
+        "name": "photo1",
+        "extention": "png",
+        "icon": "photo.png",
+        "type": "photo"
+    },
+    {
+        "id": 10,
+        "name": "photo2",
+        "extention": "png",
+        "icon": "photo.png",
+        "type": "photo"
+    },
+    {
+        "id": 11,
+        "name": "photo3",
+        "extention": "png",
+        "icon": "photo.png",
+        "type": "photo"
+    },
+    {
+        "id": 12,
+        "name": "photo4",
+        "extention": "png",
+        "icon": "photo.png",
+        "type": "photo"
+    }
+]

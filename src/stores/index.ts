@@ -17,7 +17,7 @@ export const useStore = defineStore({
                 description: "Here you can see my technical skills.",
             },
         ],
-        isShown: true,
+        isShown: false,
         isMinimized: false,
         isMaximized: false,
     }),
