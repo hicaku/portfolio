@@ -15,9 +15,26 @@ export const useDesktopStore = defineStore({
     state: () => ({
         searchQuery: "" as string,
         apps: Apps as App[],
-        programUrl: "" as string,
+        program: [] as any,
+        isMinimized: false,
+        isFullscreen: false,
     }),
-    actions: {},
+    actions: {
+        openProgram(app: App) {
+            this.isMinimized = false;
+            this.program = app;
+        },
+        closeProgram() {
+            this.isMinimized = false;
+            this.program = [];
+        },
+        toggleMinimized() {
+            this.isMinimized = !this.isMinimized;
+        },
+        toggleFullscreen() {
+            this.isFullscreen = !this.isFullscreen;
+        },
+    },
     getters: {
         getApps(): App[] {
             if (this.searchQuery.trim().length >= 3) {

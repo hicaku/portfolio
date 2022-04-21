@@ -3,7 +3,8 @@ import { storeToRefs } from "pinia";
 import { useDesktopStore } from "@/stores/desktop";
 
 const store = useDesktopStore();
-const { getApps, programUrl } = storeToRefs(store);
+const { getApps } = storeToRefs(store);
+const { openProgram } = store;
 </script>
 <template>
     <div class="desktop-apps">
@@ -12,7 +13,7 @@ const { getApps, programUrl } = storeToRefs(store);
                 class="desktop-apps__apps-item"
                 v-for="app in getApps"
                 :key="app.id"
-                @click="app.url.trim() !== '' ? (programUrl = app.url) : null"
+                @click="app.url.trim() !== '' ? openProgram(app) : null"
             >
                 <div class="desktop-apps__apps-item-icon">
                     <img :src="app.icon" />

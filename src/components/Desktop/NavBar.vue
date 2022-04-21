@@ -3,7 +3,8 @@ import { storeToRefs } from "pinia";
 import { useDesktopStore } from "@/stores/desktop";
 
 const store = useDesktopStore();
-const { searchQuery, getApps } = storeToRefs(store);
+const { searchQuery, program, isMinimized } = storeToRefs(store);
+const { toggleMinimized } = store;
 </script>
 <template>
     <div class="navbar">
@@ -21,6 +22,20 @@ const { searchQuery, getApps } = storeToRefs(store);
                 placeholder="Search..."
             />
         </div>
+        <div
+            class="navbar__opened-program"
+            v-if="program?.url"
+            @click="toggleMinimized"
+        >
+            <img
+                class="navbar__opened-program-icon"
+                :src="program.icon"
+                alt="Minimized Icon"
+            />
+            <p class="navbar__opened-program-name">
+                {{ program.name }}
+            </p>
+        </div>
         <div class="navbar__settings">
             <img src="wifi.png" alt="wifi" />
             <img src="eng.png" alt="ENG" />
@@ -35,7 +50,7 @@ const { searchQuery, getApps } = storeToRefs(store);
     height: 60px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 10px;
     background-color: #000;
@@ -52,7 +67,6 @@ const { searchQuery, getApps } = storeToRefs(store);
         align-items: center;
         width: 150px;
         height: 100%;
-        margin-right: auto;
         margin-left: 30px;
         border-bottom: 1px solid #8c52ff;
         color: #8c52ff;
@@ -75,13 +89,46 @@ const { searchQuery, getApps } = storeToRefs(store);
             }
         }
     }
+    &__opened-program {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 170px;
+        height: 100%;
+        margin-right: auto;
+        margin-left: 10px;
+        font-size: 30px;
+        color: #fff;
+        background-color: #8c52ff;
+        cursor: pointer;
+        &-icon {
+            width: 30px;
+            height: 30px;
+            margin: auto 5px;
+        }
+        &-name {
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #fff;
+            font-size: 16px;
+            margin: auto 0;
+            padding-left: 10px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            user-select: none;
+        }
+    }
     &__settings {
         display: flex;
         flex-direction: row;
         align-items: center;
         width: 100px;
         height: 100%;
-        margin-left: 30px;
+        margin-left: auto;
+        margin-right: 30px;
         img {
             width: 40px;
             height: 40px;
