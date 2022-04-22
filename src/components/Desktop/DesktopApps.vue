@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
-import { useDesktopStore } from "@/stores/desktop";
+import { useStore } from "@/stores/index";
 
-const store = useDesktopStore();
+const store = useStore();
 const { getApps } = storeToRefs(store);
 const { openProgram } = store;
 </script>
@@ -13,7 +13,7 @@ const { openProgram } = store;
                 class="desktop-apps__apps-item"
                 v-for="app in getApps"
                 :key="app.id"
-                @click="app.url.trim() !== '' ? openProgram(app) : null"
+                @click="openProgram(app)"
             >
                 <div class="desktop-apps__apps-item-icon">
                     <img :src="app.icon" />

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
-import { useDesktopStore } from "@/stores/desktop";
+import { useStore } from "@/stores/index";
 
-const store = useDesktopStore();
+const store = useStore();
 const { searchQuery, program, isMinimized } = storeToRefs(store);
 const { toggleMinimized } = store;
 </script>
