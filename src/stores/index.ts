@@ -34,13 +34,10 @@ export const useStore = defineStore({
         ],
         searchQuery: "" as string,
         apps: Apps as App[],
-        program: [] as any,
+        program: {} as App,
         isShown: true,
         isMinimized: false,
         isFullscreen: false,
-        isTextEditor: false,
-        isSetupOpen: false,
-        isPhotoViewer: false,
     }),
     getters: {
         getApps(): App[] {
@@ -58,42 +55,37 @@ export const useStore = defineStore({
             return this.apps;
         },
         currentStep(): Step {
-            console.log(this.steps[this.stepNum - 1]);
-            console.log(this.stepNum);
             return this.steps[this.stepNum - 1];
+        },
+        maxSteps(): number {
+            return this.steps.length;
         },
     },
     actions: {
         openProgram(app: App) {
-            if (app.type === "project") {
-                this.isMinimized = false;
-                this.isPhotoViewer = false;
-                this.isSetupOpen = false;
-                this.isTextEditor = false;
-                this.program = app;
-            } else if (app.type === "text") {
-                this.isPhotoViewer = false;
-                this.isSetupOpen = false;
-                this.isTextEditor = true;
-            } else if (app.type === "setup") {
-                this.isPhotoViewer = false;
-                this.isSetupOpen = true;
-                this.isTextEditor = false;
-            } else if (app.type === "photo") {
-                this.isPhotoViewer = true;
-                this.isSetupOpen = false;
-                this.isTextEditor = false;
-            }
+            this.isMinimized = false;
+            this.program = app;
         },
         closeProgram() {
+            this.isFullscreen = false;
             this.isMinimized = false;
-            this.program = [];
+            this.program = {} as App;
         },
         toggleMinimized() {
             this.isMinimized = !this.isMinimized;
         },
         toggleFullscreen() {
             this.isFullscreen = !this.isFullscreen;
+        },
+        nextStep() {
+            this.stepNum++;
+        },
+        prevStep() {
+            this.stepNum--;
+        },
+        finishSetup() {
+            this.stepNum = 1;
+            this.program = {} as App;
         },
     },
 });

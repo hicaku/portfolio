@@ -3,7 +3,7 @@ import { storeToRefs } from "pinia";
 import { useStore } from "@/stores/index";
 
 const store = useStore();
-const { searchQuery, program, isMinimized } = storeToRefs(store);
+const { searchQuery, program } = storeToRefs(store);
 const { toggleMinimized } = store;
 </script>
 <template>

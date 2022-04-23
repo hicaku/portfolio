@@ -64,28 +64,28 @@
     {
         "id": 9,
         "name": "photo1",
-        "extention": "png",
+        "extention": "jpg",
         "icon": "photo.png",
         "type": "photo"
     },
     {
         "id": 10,
         "name": "photo2",
-        "extention": "png",
+        "extention": "jpg",
         "icon": "photo.png",
         "type": "photo"
     },
     {
         "id": 11,
         "name": "photo3",
-        "extention": "png",
+        "extention": "jpg",
         "icon": "photo.png",
         "type": "photo"
     },
     {
         "id": 12,
         "name": "photo4",
-        "extention": "png",
+        "extention": "jpg",
         "icon": "photo.png",
         "type": "photo"
     }
