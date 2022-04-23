@@ -10,6 +10,7 @@ const { program } = storeToRefs(store);
 </template>
 <style lang="less" scoped>
 img {
+    max-height: 700px;
     width: 100%;
     height: 100%;
     cursor: zoom-in;

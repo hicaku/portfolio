@@ -19,18 +19,22 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
             <span>{{ program.name }}</span>
             <div class="program-window__header-buttons">
                 <button type="button" @click="toggleMinimized">
-                    <img src="minimize.png" alt="Minimize" />
+                    <img src="@/assets/images/minimize.png" alt="Minimize" />
                 </button>
                 <button type="button" @click="toggleFullscreen">
                     <img
                         v-if="!isFullscreen"
-                        src="maximize.png"
+                        src="@/assets/images/maximize.png"
                         alt="Maximize"
                     />
-                    <img v-else src="maximized.png" alt="Maximized" />
+                    <img
+                        v-else
+                        src="@/assets/images/maximized.png"
+                        alt="Maximized"
+                    />
                 </button>
                 <button type="button" @click="closeProgram">
-                    <img src="close.png" alt="Close" />
+                    <img src="@/assets/images/close.png" alt="Close" />
                 </button>
             </div>
         </div>
