@@ -102,7 +102,14 @@ export const useStore = defineStore({
         },
         finishSetup() {
             this.stepNum = 1;
+            this.isSetupFinished = true;
             this.program = {} as App;
+        },
+        downloadCV() {
+            const link = document.createElement("a");
+            link.href = "./cv.pdf";
+            link.download = "cv.pdf";
+            link.click();
         },
     },
 });

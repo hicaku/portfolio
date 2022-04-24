@@ -5,7 +5,8 @@ import SetupWindow from "@/components/Windows/SetupWindow.vue";
 import ImageWindow from "@/components/Windows/ImageWindow.vue";
 
 const store = useStore();
-const { program, isMinimized, isFullscreen } = storeToRefs(store);
+const { program, isMinimized, isFullscreen, isSetupFinished } =
+    storeToRefs(store);
 const { toggleMinimized, closeProgram, toggleFullscreen } = store;
 </script>
 <template>
@@ -79,7 +80,7 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
     border-radius: 10px;
     &.fullscreen {
         width: 100%;
-        height: calc(100vh - 60px);
+        height: calc(100% - 60px);
         top: 0;
         left: 0;
         transform: translate(0, 0);

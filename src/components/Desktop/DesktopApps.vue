@@ -3,8 +3,8 @@ import { storeToRefs } from "pinia";
 import { useStore } from "@/stores/index";
 
 const store = useStore();
-const { getApps } = storeToRefs(store);
-const { openProgram } = store;
+const { getApps, isSetupFinished } = storeToRefs(store);
+const { openProgram, downloadCV } = store;
 </script>
 <template>
     <div class="desktop-apps">
@@ -20,6 +20,18 @@ const { openProgram } = store;
                 </div>
                 <div class="desktop-apps__apps-item-name">
                     <p>{{ app.name }}.{{ app.extention }}</p>
+                </div>
+            </div>
+            <div
+                class="desktop-apps__apps-item"
+                v-if="isSetupFinished"
+                @click="downloadCV"
+            >
+                <div class="desktop-apps__apps-item-icon">
+                    <img src="@/assets/images/pdf.png" />
+                </div>
+                <div class="desktop-apps__apps-item-name">
+                    <p>CV.pdf</p>
                 </div>
             </div>
         </div>

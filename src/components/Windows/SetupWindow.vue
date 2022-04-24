@@ -45,10 +45,7 @@ const { maxSteps, nextStep, prevStep, finishSetup } = store;
                 <button @click="nextStep" v-if="stepNum !== maxSteps">
                     Next &gt;
                 </button>
-                <button
-                    @click="isSetupFinished = true && finishSetup"
-                    v-if="stepNum === maxSteps"
-                >
+                <button @click="finishSetup" v-if="stepNum === maxSteps">
                     Finish
                 </button>
             </div>
