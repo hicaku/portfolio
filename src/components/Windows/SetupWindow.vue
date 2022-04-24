@@ -56,11 +56,11 @@ const { maxSteps, nextStep, prevStep, finishSetup } = store;
 .step-window {
     background: #333;
     position: relative;
+    font-size: 32px;
     &__body {
         padding: 10px;
         &-step {
             &-number {
-                font-size: 32px;
                 &-current {
                     color: #8c52ff;
                 }
@@ -69,7 +69,7 @@ const { maxSteps, nextStep, prevStep, finishSetup } = store;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                margin-bottom: 60px;
+                margin-bottom: 80px;
                 &-banner {
                     height: 100%;
                 }
@@ -77,7 +77,6 @@ const { maxSteps, nextStep, prevStep, finishSetup } = store;
                     padding: 0 20px;
                     width: 100%;
                     &-title {
-                        font-size: 32px;
                         font-weight: 700;
                     }
                     &-description {
@@ -119,6 +118,14 @@ const { maxSteps, nextStep, prevStep, finishSetup } = store;
         &.fullscreen {
             height: calc(100% - 60px);
         }
+        &__body-step-content-banner {
+            width: 100px;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .step-window {
+        font-size: 24px;
     }
 }
 </style>

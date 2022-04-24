@@ -23,9 +23,9 @@ export const useStore = defineStore({
         steps: [
             {
                 id: 1,
-                title: "Welcome to My Portfolio!",
+                title: "Welcome!",
                 description:
-                    "This is a setup wizard for my CV. At the end, you will be able to see it.",
+                    "At the of setup wizard, you will be able to see my CV.",
                 imgSrc: "setup-banner.png",
             },
             {

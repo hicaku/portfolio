@@ -15,7 +15,7 @@ const { program, isFullscreen } = storeToRefs(store);
 <style lang="less" scoped>
 img {
     width: 100%;
-    height: 100%;
+    height: auto;
     cursor: zoom-in;
     &.fullscreen {
         height: calc(100% - 50px);
