@@ -16,9 +16,11 @@ const { program, isFullscreen } = storeToRefs(store);
 img {
     width: 100%;
     height: auto;
+    max-height: 750px;
     cursor: zoom-in;
     &.fullscreen {
         height: calc(100% - 50px);
+        max-height: calc(100% - 50px);
     }
 }
 @media screen and (max-width: 768px) {
