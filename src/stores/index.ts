@@ -13,6 +13,7 @@ interface Step {
     id: number;
     title: string;
     description: string;
+    imgSrc: string;
 }
 
 export const useStore = defineStore({
@@ -24,12 +25,26 @@ export const useStore = defineStore({
                 id: 1,
                 title: "Welcome to My Portfolio!",
                 description:
-                    "This is a setup wizard to help you get to know me.",
+                    "This is a setup wizard for my CV. At the end, you will be able to see it.",
+                imgSrc: "setup-banner.png",
             },
             {
                 id: 2,
-                title: "My Technical Skills",
-                description: "Here you can see my technical skills.",
+                title: "Employment History",
+                description: "In short, you can see my employment history.",
+                imgSrc: "employment-banner.png",
+            },
+            {
+                id: 3,
+                title: "Technical Skills",
+                description: "My technical skills can be seen here.",
+                imgSrc: "techstack-banner.png",
+            },
+            {
+                id: 4,
+                title: "Hobbies",
+                description: "My hobbies are listed here.",
+                imgSrc: "hobbies-banner.png",
             },
         ],
         searchQuery: "" as string,
@@ -38,6 +53,7 @@ export const useStore = defineStore({
         isShown: true,
         isMinimized: false,
         isFullscreen: false,
+        isSetupFinished: false,
     }),
     getters: {
         getApps(): App[] {
@@ -69,6 +85,7 @@ export const useStore = defineStore({
         closeProgram() {
             this.isFullscreen = false;
             this.isMinimized = false;
+            this.stepNum = 1;
             this.program = {} as App;
         },
         toggleMinimized() {

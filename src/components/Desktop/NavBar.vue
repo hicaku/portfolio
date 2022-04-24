@@ -24,7 +24,7 @@ const { toggleMinimized } = store;
         </div>
         <div
             class="navbar__opened-program"
-            v-if="program?.url"
+            v-if="program?.type"
             @click="toggleMinimized"
         >
             <img
@@ -134,6 +134,16 @@ const { toggleMinimized } = store;
             height: 40px;
             margin: 0 5px;
             cursor: pointer;
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .navbar {
+        &__search-icon {
+            display: none;
+        }
+        &__settings {
+            display: none;
         }
     }
 }

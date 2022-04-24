@@ -21,7 +21,11 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
                 <button type="button" @click="toggleMinimized">
                     <img src="@/assets/images/minimize.png" alt="Minimize" />
                 </button>
-                <button type="button" @click="toggleFullscreen">
+                <button
+                    type="button"
+                    @click="toggleFullscreen"
+                    v-if="program.type !== 'setup'"
+                >
                     <img
                         v-if="!isFullscreen"
                         src="@/assets/images/maximize.png"
@@ -33,7 +37,7 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
                         alt="Maximized"
                     />
                 </button>
-                <button type="button" @click="closeProgram">
+                <button class="close" type="button" @click="closeProgram">
                     <img src="@/assets/images/close.png" alt="Close" />
                 </button>
             </div>
@@ -45,7 +49,22 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
         ></iframe>
         <SetupWindow v-if="program.type === 'setup'" />
         <ImageWindow v-if="program.type === 'photo'" />
-        <div class="text-editor" v-if="program.type === 'text'">TEXTTEXT</div>
+        <div class="text-editor" v-if="program.type === 'text'">
+            <h1>Hello!</h1>
+            <p>This website exists for you to get to know me.</p>
+            <br />
+            <p>
+                If you want to download my CV, you can click to SETUP.exe and
+                when the setup finishes, you will be able to download my CV.
+            </p>
+            <br />
+            <p>
+                You can view my websites by clicking the logos on the desktop.
+                Also I have added 4 photographs that I took.
+            </p>
+            <br />
+            <p style="text-align: right">- Hikmet</p>
+        </div>
     </div>
 </template>
 <style lang="less" scoped>
@@ -60,13 +79,14 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
     border-radius: 10px;
     &.fullscreen {
         width: 100%;
-        height: 100%;
+        height: calc(100vh - 60px);
         top: 0;
         left: 0;
         transform: translate(0, 0);
         border-radius: 0;
-        iframe {
-            height: calc(100% - 110px);
+        iframe,
+        .text-editor {
+            height: calc(100% - 50px);
         }
     }
     &__header {
@@ -95,7 +115,7 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
                 height: 32px;
                 border-radius: 5px;
                 border: none;
-                color: #000;
+                outline: none;
                 background-color: #fff;
                 font-size: 24px;
                 line-height: 24px;
@@ -104,6 +124,9 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
                 img {
                     width: 16px;
                     height: 16px;
+                }
+                &.close {
+                    background-color: #ff5252;
                 }
             }
         }
@@ -114,13 +137,17 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
         border: 1px solid #8c52ff;
         width: 100%;
     }
+    .text-editor {
+        background: #333;
+        padding: 10px;
+    }
 }
 @media screen and (max-width: 1024px) {
     .program-window {
         width: 70%;
-        height: 400px;
-        min-height: 400px;
-        transform: translate(-50%, -100%);
+        height: 500px;
+        min-height: 500px;
+        transform: translate(-50%, -55%);
         iframe {
             min-height: 500px;
         }
@@ -128,10 +155,12 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
 }
 @media screen and (max-width: 768px) {
     .program-window {
-        width: 70%;
-        height: 300px;
-        min-height: 300px;
-        transform: translate(-50%, -100%);
+        &.fullscreen {
+            iframe,
+            .text-editor {
+                height: calc(100% - 60px);
+            }
+        }
         &__header {
             height: 60px;
             &-buttons {
