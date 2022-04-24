@@ -74,7 +74,7 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-height: 780px;
+    min-height: 700px;
     min-width: 300px;
     width: 70%;
     border-radius: 10px;
