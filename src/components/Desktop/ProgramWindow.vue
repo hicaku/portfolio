@@ -74,7 +74,6 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-height: 700px;
     min-width: 300px;
     width: 70%;
     border-radius: 10px;
@@ -146,8 +145,6 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
 @media screen and (max-width: 1024px) {
     .program-window {
         width: 70%;
-        height: 500px;
-        min-height: 500px;
         transform: translate(-50%, -55%);
         iframe {
             min-height: 500px;
