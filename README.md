@@ -1,6 +1,6 @@
 # Portfolio
 
-**Live Demo:  [Vue Calculator](https://hicaku.com/)**
+**Live Demo:  [Portfolio - HiCaKu](https://hicaku.com/)**
 
 Hi! In this project I try to develop a calculator app with **Vue, Typescript, Pinia, Vite**.
 
