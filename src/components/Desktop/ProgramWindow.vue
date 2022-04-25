@@ -5,8 +5,7 @@ import SetupWindow from "@/components/Windows/SetupWindow.vue";
 import ImageWindow from "@/components/Windows/ImageWindow.vue";
 
 const store = useStore();
-const { program, isMinimized, isFullscreen, isSetupFinished } =
-    storeToRefs(store);
+const { program, isMinimized, isFullscreen } = storeToRefs(store);
 const { toggleMinimized, closeProgram, toggleFullscreen } = store;
 </script>
 <template>

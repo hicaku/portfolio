@@ -79,8 +79,12 @@ export const useStore = defineStore({
     },
     actions: {
         openProgram(app: App) {
-            this.isMinimized = false;
-            this.program = app;
+            if (app.type === "app") {
+                window.open(app.url, "_blank");
+            } else {
+                this.isMinimized = false;
+                this.program = app;
+            }
         },
         closeProgram() {
             this.isFullscreen = false;

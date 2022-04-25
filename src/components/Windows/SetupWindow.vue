@@ -3,8 +3,7 @@ import { storeToRefs } from "pinia";
 import { useStore } from "@/stores/index";
 
 const store = useStore();
-const { stepNum, currentStep, isMinimized, isSetupFinished } =
-    storeToRefs(store);
+const { stepNum, currentStep, isMinimized } = storeToRefs(store);
 const { maxSteps, nextStep, prevStep, finishSetup } = store;
 </script>
 <template>

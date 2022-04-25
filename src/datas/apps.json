@@ -88,5 +88,21 @@
         "extention": "jpg",
         "icon": "photo.png",
         "type": "photo"
+    },
+    {
+        "id": 13,
+        "name": "GitHub",
+        "extention": "app",
+        "icon": "github.png",
+        "type": "app",
+        "url": "https://github.com/Spencehiko"
+    },
+    {
+        "id": 14,
+        "name": "LinkedIn",
+        "extention": "app",
+        "icon": "linkedin.png",
+        "type": "app",
+        "url": "https://www.linkedin.com/in/hikmet-can-kufteoglu/"
     }
 ]
