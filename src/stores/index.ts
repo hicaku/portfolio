@@ -76,6 +76,11 @@ export const useStore = defineStore({
         maxSteps(): number {
             return this.steps.length;
         },
+        currentTime(): string {
+            const date = new Date();
+            const time = date.getHours() + ":" + date.getMinutes();
+            return time;
+        },
     },
     actions: {
         openProgram(app: App) {

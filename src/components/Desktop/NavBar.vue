@@ -3,12 +3,12 @@ import { storeToRefs } from "pinia";
 import { useStore } from "@/stores/index";
 
 const store = useStore();
-const { searchQuery, program } = storeToRefs(store);
+const { searchQuery, program, currentTime } = storeToRefs(store);
 const { toggleMinimized } = store;
 </script>
 <template>
     <div class="navbar">
-        <img class="navbar__logo" src="@/assets/images/logo.png" alt="Logo" />
+        <img class="navbar__logo" src="@/assets/images/start.png" alt="Logo" />
         <div class="navbar__search">
             <img
                 class="navbar__search-icon"
@@ -52,13 +52,12 @@ const { toggleMinimized } = store;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px;
+    padding: 10px 0;
     background-color: #000;
     &__logo {
-        width: 60px;
+        width: 150px;
         height: 50px;
-        padding-right: 10px;
-        border-right: 1px solid #8c52ff;
+        border-radius: 3px;
         cursor: pointer;
     }
     &__search {
