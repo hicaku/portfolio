@@ -50,6 +50,14 @@ export const useStore = defineStore({
         searchQuery: "" as string,
         apps: Apps as App[],
         program: {} as App,
+        currentTime: (("0" + new Date().getHours()).slice(-2) +
+            ":" +
+            ("0" + new Date().getMinutes()).slice(-2)) as string,
+        currentDate: (("0" + new Date().getDate()).slice(-2) +
+            "." +
+            ("0" + (new Date().getMonth() + 1)).slice(-2) +
+            "." +
+            new Date().getFullYear()) as string,
         isShown: true,
         isMinimized: false,
         isFullscreen: false,
@@ -76,13 +84,16 @@ export const useStore = defineStore({
         maxSteps(): number {
             return this.steps.length;
         },
-        currentTime(): string {
-            const date = new Date();
-            const time = date.getHours() + ":" + date.getMinutes();
-            return time;
-        },
     },
     actions: {
+        getCurrentTime() {
+            const now = new Date();
+            const time =
+                ("0" + now.getHours()).slice(-2) +
+                ":" +
+                ("0" + now.getMinutes()).slice(-2);
+            this.currentTime = time;
+        },
         openProgram(app: App) {
             if (app.type === "app") {
                 window.open(app.url, "_blank");

@@ -3,8 +3,9 @@ import { storeToRefs } from "pinia";
 import { useStore } from "@/stores/index";
 
 const store = useStore();
-const { searchQuery, program, currentTime } = storeToRefs(store);
-const { toggleMinimized } = store;
+const { searchQuery, program, currentTime, currentDate } = storeToRefs(store);
+const { toggleMinimized, getCurrentTime } = store;
+setInterval(getCurrentTime, 5000);
 </script>
 <template>
     <div class="navbar">
@@ -37,8 +38,8 @@ const { toggleMinimized } = store;
             </p>
         </div>
         <div class="navbar__settings">
-            <img src="@/assets/images/wifi.png" alt="wifi" />
-            <img src="@/assets/images/eng.png" alt="ENG" />
+            <span class="navbar__settings-time"> {{ currentTime }}</span>
+            <span class="navbar__settings-date"> {{ currentDate }}</span>
         </div>
     </div>
 </template>
@@ -47,17 +48,17 @@ const { toggleMinimized } = store;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px 0;
     background-color: #000;
     &__logo {
         width: 150px;
         height: 50px;
-        border-radius: 3px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
         cursor: pointer;
     }
     &__search {
@@ -67,7 +68,6 @@ const { toggleMinimized } = store;
         width: 150px;
         height: 100%;
         margin-left: 30px;
-        border-bottom: 1px solid #8c52ff;
         color: #8c52ff;
         &-icon {
             width: 30px;
@@ -122,25 +122,20 @@ const { toggleMinimized } = store;
     }
     &__settings {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         width: 100px;
         height: 100%;
         margin-left: auto;
-        margin-right: 30px;
-        img {
-            width: 40px;
-            height: 40px;
-            margin: 0 5px;
-            cursor: pointer;
+        background-color: #ab82fe;
+        border-left: 1px solid #333;
+        span {
+            line-height: 25px;
         }
     }
 }
 @media screen and (max-width: 400px) {
     .navbar {
-        &__search-icon {
-            display: none;
-        }
         &__settings {
             display: none;
         }
