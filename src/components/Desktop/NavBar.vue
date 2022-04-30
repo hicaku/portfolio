@@ -137,6 +137,9 @@ setInterval(getCurrentTime, 5000);
 }
 @media screen and (max-width: 400px) {
     .navbar {
+        &__search {
+            display: none;
+        }
         &__settings {
             display: none;
         }
