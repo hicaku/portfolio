@@ -3,6 +3,7 @@ import { storeToRefs } from "pinia";
 import { useStore } from "@/stores/index";
 import SetupWindow from "@/components/Windows/SetupWindow.vue";
 import ImageWindow from "@/components/Windows/ImageWindow.vue";
+import FolderWindow from "@/components/Windows/FolderWindow.vue";
 
 const store = useStore();
 const { program, isMinimized, isFullscreen } = storeToRefs(store);
@@ -49,6 +50,7 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
         ></iframe>
         <SetupWindow v-if="program.type === 'setup'" />
         <ImageWindow v-if="program.type === 'photo'" />
+        <FolderWindow v-if="program.type === 'folder'" />
         <div class="text-editor" v-if="program.type === 'text'">
             <h1>Hello!</h1>
             <p>This website exists for you to get to know me.</p>

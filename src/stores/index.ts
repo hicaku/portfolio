@@ -4,10 +4,11 @@ import Apps from "@/datas/apps.json";
 interface App {
     id: number;
     name: string;
-    extention: string;
+    extention?: string;
     icon: string;
     type: string;
-    url: string;
+    url?: string;
+    children?: App[];
 }
 interface Step {
     id: number;
@@ -50,6 +51,7 @@ export const useStore = defineStore({
         searchQuery: "" as string,
         apps: Apps as App[],
         program: {} as App,
+        folderPrograms: [] as App[] | undefined,
         currentTime: (("0" + new Date().getHours()).slice(-2) +
             ":" +
             ("0" + new Date().getMinutes()).slice(-2)) as string,
@@ -71,7 +73,8 @@ export const useStore = defineStore({
                         app.name
                             .toLowerCase()
                             .includes(this.searchQuery.toLowerCase()) ||
-                        app.extention
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        (app as any).extention
                             .toLowerCase()
                             .includes(this.searchQuery.toLowerCase())
                 );
@@ -97,6 +100,10 @@ export const useStore = defineStore({
         openProgram(app: App) {
             if (app.type === "app") {
                 window.open(app.url, "_blank");
+            } else if (app.type === "folder") {
+                this.folderPrograms = app.children;
+                this.isMinimized = false;
+                this.program = app;
             } else {
                 this.isMinimized = false;
                 this.program = app;
@@ -106,7 +113,46 @@ export const useStore = defineStore({
             this.isFullscreen = false;
             this.isMinimized = false;
             this.stepNum = 1;
-            this.program = {} as App;
+            if (this.program.type === "photo") {
+                this.program = {
+                    id: 9,
+                    name: "Photographs",
+                    icon: "folder.png",
+                    type: "folder",
+                    children: [
+                        {
+                            id: 10,
+                            name: "photo1",
+                            extention: "jpg",
+                            icon: "photo.png",
+                            type: "photo",
+                        },
+                        {
+                            id: 11,
+                            name: "photo2",
+                            extention: "jpg",
+                            icon: "photo.png",
+                            type: "photo",
+                        },
+                        {
+                            id: 12,
+                            name: "photo3",
+                            extention: "jpg",
+                            icon: "photo.png",
+                            type: "photo",
+                        },
+                        {
+                            id: 13,
+                            name: "photo4",
+                            extention: "jpg",
+                            icon: "photo.png",
+                            type: "photo",
+                        },
+                    ],
+                };
+            } else {
+                this.program = {} as App;
+            }
         },
         toggleMinimized() {
             this.isMinimized = !this.isMinimized;

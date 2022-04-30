@@ -19,7 +19,10 @@ const { openProgram, downloadCV } = store;
                     <img :src="app.icon" />
                 </div>
                 <div class="desktop-apps__apps-item-name">
-                    <p>{{ app.name }}.{{ app.extention }}</p>
+                    <p>
+                        {{ app.name
+                        }}{{ app.extention ? "." + app.extention : "" }}
+                    </p>
                 </div>
             </div>
             <div

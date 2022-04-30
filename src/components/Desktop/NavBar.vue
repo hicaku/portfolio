@@ -42,6 +42,7 @@ setInterval(getCurrentTime, 5000);
             <span class="navbar__settings-date"> {{ currentDate }}</span>
         </div>
     </div>
+    <div class="start-menu"></div>
 </template>
 <style lang="less" scoped>
 .navbar {
@@ -98,7 +99,7 @@ setInterval(getCurrentTime, 5000);
         margin-left: 10px;
         font-size: 30px;
         color: #fff;
-        background-color: #8c52ff;
+        background-color: #ab82fe;
         cursor: pointer;
         &-icon {
             width: 30px;

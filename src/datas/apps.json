@@ -63,34 +63,50 @@
     },
     {
         "id": 9,
-        "name": "photo1",
-        "extention": "jpg",
-        "icon": "photo.png",
-        "type": "photo"
+        "name": "Photographs",
+        "icon": "folder.png",
+        "type": "folder",
+        "children": [
+            {
+                "id": 10,
+                "name": "photo1",
+                "extention": "jpg",
+                "icon": "photo.png",
+                "type": "photo"
+            },
+            {
+                "id": 11,
+                "name": "photo2",
+                "extention": "jpg",
+                "icon": "photo.png",
+                "type": "photo"
+            },
+            {
+                "id": 12,
+                "name": "photo3",
+                "extention": "jpg",
+                "icon": "photo.png",
+                "type": "photo"
+            },
+            {
+                "id": 13,
+                "name": "photo4",
+                "extention": "jpg",
+                "icon": "photo.png",
+                "type": "photo"
+            },
+            {
+                "id": 16,
+                "name": "photo5",
+                "extention": "jpg",
+                "icon": "photo.png",
+                "type": "photo"
+            }
+        ]
     },
+
     {
-        "id": 10,
-        "name": "photo2",
-        "extention": "jpg",
-        "icon": "photo.png",
-        "type": "photo"
-    },
-    {
-        "id": 11,
-        "name": "photo3",
-        "extention": "jpg",
-        "icon": "photo.png",
-        "type": "photo"
-    },
-    {
-        "id": 12,
-        "name": "photo4",
-        "extention": "jpg",
-        "icon": "photo.png",
-        "type": "photo"
-    },
-    {
-        "id": 13,
+        "id": 14,
         "name": "GitHub",
         "extention": "app",
         "icon": "github.png",
@@ -98,7 +114,7 @@
         "url": "https://github.com/Spencehiko"
     },
     {
-        "id": 14,
+        "id": 15,
         "name": "LinkedIn",
         "extention": "app",
         "icon": "linkedin.png",
