@@ -77,7 +77,9 @@ setInterval(getCurrentTime, 5000);
             </div>
         </div>
 
-        <h3 v-if="recentApps.length">Recent Apps</h3>
+        <h3 v-if="recentApps.length" class="start-menu__recent-title">
+            Recent Apps
+        </h3>
         <div v-if="recentApps.length" class="start-menu__content">
             <div
                 class="start-menu__content-item"
@@ -108,7 +110,7 @@ setInterval(getCurrentTime, 5000);
     justify-content: flex-start;
     align-items: center;
     background-color: #000;
-    border-top: 3px solid #ab82fe;
+    border-top: 3px solid #13003a;
     &__logo {
         width: 150px;
         height: 50px;
@@ -198,7 +200,7 @@ setInterval(getCurrentTime, 5000);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: #000;
+    background-color: #13003a;
     z-index: 1;
     border-top-right-radius: 20px;
     &__header {
@@ -227,7 +229,6 @@ setInterval(getCurrentTime, 5000);
         justify-content: flex-start;
         align-items: flex-start;
         flex-wrap: wrap;
-        background-color: #000;
         row-gap: 20px;
         column-gap: 10px;
         padding: 10px;
@@ -238,7 +239,6 @@ setInterval(getCurrentTime, 5000);
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            background-color: #000;
             cursor: pointer;
             &-icon {
                 width: 30px;
@@ -260,6 +260,11 @@ setInterval(getCurrentTime, 5000);
                 user-select: none;
             }
         }
+    }
+    &__recent-title {
+        width: 100%;
+        padding: 0 20px;
+        background-color: #ab82fe;
     }
 }
 @media screen and (max-width: 400px) {

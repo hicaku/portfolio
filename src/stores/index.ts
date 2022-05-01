@@ -126,7 +126,8 @@ export const useStore = defineStore({
                 this.recentApps.splice(this.recentApps.indexOf(app), 1);
                 this.recentApps.unshift(app);
             } else if (this.recentApps.length === 5) {
-                this.recentApps.shift();
+                this.recentApps.unshift(app);
+                this.recentApps.pop();
             } else {
                 this.recentApps.unshift(app);
             }
