@@ -110,7 +110,7 @@ setInterval(getCurrentTime, 5000);
     justify-content: flex-start;
     align-items: center;
     background-color: #000;
-    border-top: 3px solid #13003a;
+    border-top: 3px solid #8c52ff;
     &__logo {
         width: 150px;
         height: 50px;
@@ -200,7 +200,7 @@ setInterval(getCurrentTime, 5000);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: #13003a;
+    background-color: #333;
     z-index: 1;
     border-top-right-radius: 20px;
     &__header {
