@@ -4,14 +4,16 @@
         "name": "README",
         "extention": "txt",
         "icon": "readme.png",
-        "type": "text"
+        "type": "text",
+        "isOnStartMenu": true
     },
     {
         "id": 2,
         "name": "SETUP",
         "extention": "exe",
         "icon": "setup.png",
-        "type": "setup"
+        "type": "setup",
+        "isOnStartMenu": true
     },
     {
         "id": 3,
@@ -19,7 +21,8 @@
         "extention": "exe",
         "icon": "infinite-wordle.png",
         "type": "project",
-        "url": "https://wordle.hicaku.com/"
+        "url": "https://wordle.hicaku.com/",
+        "isOnStartMenu": true
     },
     {
         "id": 4,
@@ -51,7 +54,8 @@
         "extention": "exe",
         "icon": "calculator.png",
         "type": "project",
-        "url": "https://calculator.hicaku.com/"
+        "url": "https://calculator.hicaku.com/",
+        "isOnStartMenu": true
     },
     {
         "id": 8,
@@ -59,7 +63,8 @@
         "extention": "exe",
         "icon": "tictactoe.png",
         "type": "project",
-        "url": "https://tictactoe.hicaku.com/"
+        "url": "https://tictactoe.hicaku.com/",
+        "isOnStartMenu": true
     },
     {
         "id": 9,
@@ -111,7 +116,8 @@
         "extention": "app",
         "icon": "github.png",
         "type": "app",
-        "url": "https://github.com/Spencehiko"
+        "url": "https://github.com/Spencehiko",
+        "isOnStartMenu": true
     },
     {
         "id": 15,
@@ -119,6 +125,7 @@
         "extention": "app",
         "icon": "linkedin.png",
         "type": "app",
-        "url": "https://www.linkedin.com/in/hikmet-can-kufteoglu/"
+        "url": "https://www.linkedin.com/in/hikmet-can-kufteoglu/",
+        "isOnStartMenu": true
     }
 ]

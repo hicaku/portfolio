@@ -9,6 +9,7 @@ interface App {
     type: string;
     url?: string;
     children?: App[];
+    isOnStartMenu?: boolean;
 }
 interface Step {
     id: number;
@@ -60,10 +61,12 @@ export const useStore = defineStore({
             ("0" + (new Date().getMonth() + 1)).slice(-2) +
             "." +
             new Date().getFullYear()) as string,
+        recentApps: [] as App[],
         isShown: true,
         isMinimized: false,
         isFullscreen: false,
         isSetupFinished: false,
+        isStartMenuOpen: false,
     }),
     getters: {
         getApps(): App[] {
@@ -80,6 +83,9 @@ export const useStore = defineStore({
                 );
             }
             return this.apps;
+        },
+        getStartMenuApps(): App[] {
+            return this.apps.filter((app) => app.isOnStartMenu);
         },
         currentStep(): Step {
             return this.steps[this.stepNum - 1];
@@ -98,8 +104,10 @@ export const useStore = defineStore({
             this.currentTime = time;
         },
         openProgram(app: App) {
+            this.isStartMenuOpen = false;
             if (app.type === "app") {
                 window.open(app.url, "_blank");
+                this.insertRecentApp(app);
             } else if (app.type === "folder") {
                 this.folderPrograms = app.children;
                 this.isMinimized = false;
@@ -107,6 +115,20 @@ export const useStore = defineStore({
             } else {
                 this.isMinimized = false;
                 this.program = app;
+                this.insertRecentApp(app);
+            }
+        },
+        insertRecentApp(app: App) {
+            if (app.isOnStartMenu) {
+                return;
+            }
+            if (this.recentApps.includes(app)) {
+                this.recentApps.splice(this.recentApps.indexOf(app), 1);
+                this.recentApps.unshift(app);
+            } else if (this.recentApps.length === 5) {
+                this.recentApps.shift();
+            } else {
+                this.recentApps.unshift(app);
             }
         },
         closeProgram() {
@@ -155,6 +177,9 @@ export const useStore = defineStore({
             }
         },
         toggleMinimized() {
+            if (this.isMinimized) {
+                this.isStartMenuOpen = false;
+            }
             this.isMinimized = !this.isMinimized;
         },
         toggleFullscreen() {
