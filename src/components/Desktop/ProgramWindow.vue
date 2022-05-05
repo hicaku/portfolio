@@ -134,7 +134,7 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
     }
     iframe {
         min-width: 300px;
-        min-height: 750px;
+        min-height: 500px;
         border: 1px solid #8c52ff;
         width: 100%;
     }
