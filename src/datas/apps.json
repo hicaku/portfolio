@@ -127,5 +127,14 @@
         "type": "app",
         "url": "https://www.linkedin.com/in/hikmet-can-kufteoglu/",
         "isOnStartMenu": true
+    },
+    {
+        "id": 16,
+        "name": "Hikotify",
+        "extention": "exe",
+        "icon": "hikotify.png",
+        "type": "project",
+        "url": "https://hikotify.hicaku.com/",
+        "isOnStartMenu": true
     }
 ]
