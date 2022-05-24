@@ -22,7 +22,8 @@
         "icon": "infinite-wordle.png",
         "type": "project",
         "url": "https://wordle.hicaku.com/",
-        "isOnStartMenu": true
+        "isOnStartMenu": true,
+        "sortApp": 1
     },
     {
         "id": 4,
@@ -30,7 +31,8 @@
         "extention": "exe",
         "icon": "hibu.png",
         "type": "project",
-        "url": "https://hibu.hicaku.com/"
+        "url": "https://hibu.hicaku.com/",
+        "sortApp": 4
     },
     {
         "id": 5,
@@ -38,7 +40,8 @@
         "extention": "exe",
         "icon": "earthquakes.png",
         "type": "project",
-        "url": "https://earthquakes.hicaku.com/"
+        "url": "https://earthquakes.hicaku.com/",
+        "sortApp": 3
     },
     {
         "id": 6,
@@ -46,7 +49,8 @@
         "extention": "exe",
         "icon": "nba.png",
         "type": "project",
-        "url": "https://nba.hicaku.com/"
+        "url": "https://nba.hicaku.com/",
+        "sortApp": 7
     },
     {
         "id": 7,
@@ -55,7 +59,8 @@
         "icon": "calculator.png",
         "type": "project",
         "url": "https://calculator.hicaku.com/",
-        "isOnStartMenu": true
+        "isOnStartMenu": true,
+        "sortApp": 5
     },
     {
         "id": 8,
@@ -64,7 +69,8 @@
         "icon": "tictactoe.png",
         "type": "project",
         "url": "https://tictactoe.hicaku.com/",
-        "isOnStartMenu": true
+        "isOnStartMenu": true,
+        "sortApp": 6
     },
     {
         "id": 9,
@@ -135,6 +141,7 @@
         "icon": "hikotify.png",
         "type": "project",
         "url": "https://hikotify.hicaku.com/",
-        "isOnStartMenu": true
+        "isOnStartMenu": true,
+        "sortApp": 2
     }
 ]

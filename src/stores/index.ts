@@ -10,6 +10,7 @@ interface App {
     url?: string;
     children?: App[];
     isOnStartMenu?: boolean;
+    sortApp?: number;
 }
 interface Step {
     id: number;
@@ -71,18 +72,18 @@ export const useStore = defineStore({
     getters: {
         getApps(): App[] {
             if (this.searchQuery.trim().length >= 3) {
-                return this.apps.filter(
-                    (app) =>
-                        app.name
-                            .toLowerCase()
-                            .includes(this.searchQuery.toLowerCase()) ||
-                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        (app as any).extention
-                            .toLowerCase()
-                            .includes(this.searchQuery.toLowerCase())
+                return this.apps.filter((app) =>
+                    app.name
+                        .toLowerCase()
+                        .includes(this.searchQuery.toLowerCase())
                 );
             }
-            return this.apps;
+            return this.apps.sort((a, b) => {
+                if (a.sortApp && b.sortApp) {
+                    return a.sortApp - b.sortApp;
+                }
+                return 0;
+            });
         },
         getStartMenuApps(): App[] {
             return this.apps.filter((app) => app.isOnStartMenu);
