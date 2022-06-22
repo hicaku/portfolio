@@ -44,15 +44,6 @@
         "sortApp": 3
     },
     {
-        "id": 6,
-        "name": "NBA",
-        "extention": "exe",
-        "icon": "nba.png",
-        "type": "project",
-        "url": "https://nba.hicaku.com/",
-        "sortApp": 7
-    },
-    {
         "id": 7,
         "name": "Calculator",
         "extention": "exe",
