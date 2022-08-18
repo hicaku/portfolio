@@ -48,12 +48,8 @@ function timeOut() {
         </div>
         <div class="welcome-text" v-if="isAllProgressCompleted">
             <h2>>> Welcome to the HikOS 22!</h2>
-            <h4>>> This is my portfolio site.</h4>
-            <h4>
-                >> If you are here just to download my resume, press the button
-                below.
-            </h4>
-            <h4>>> If not, close this window and start to explore my works!</h4>
+            <h4>>> You can simply download my resume,</h4>
+            <h4>>> Or close this window and start to explore my works!</h4>
             <div class="download">
                 <button class="download-button" @click="downloadCV">
                     Download CV
@@ -69,7 +65,7 @@ function timeOut() {
     color: #0f0;
     position: relative;
     font-size: 32px;
-    padding: 10px 70px;
+    padding: 10px 45px;
     .progress {
         &-row {
             display: flex;
