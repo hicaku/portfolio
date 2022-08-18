@@ -38,7 +38,7 @@ setInterval(getCurrentTime, 5000);
         </div>
         <div
             class="navbar__opened-program"
-            v-if="program?.type"
+            v-if="program?.type && program?.type !== 'welcome'"
             @click="toggleMinimized"
         >
             <img

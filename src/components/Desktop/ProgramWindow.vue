@@ -4,6 +4,7 @@ import { useStore } from "@/stores/index";
 import SetupWindow from "@/components/Windows/SetupWindow.vue";
 import ImageWindow from "@/components/Windows/ImageWindow.vue";
 import FolderWindow from "@/components/Windows/FolderWindow.vue";
+import WelcomeWindow from "../Windows/WelcomeWindow.vue";
 
 const store = useStore();
 const { program, isMinimized, isFullscreen } = storeToRefs(store);
@@ -19,13 +20,19 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
         <div class="program-window__header">
             <span>{{ program.name }}</span>
             <div class="program-window__header-buttons">
-                <button type="button" @click="toggleMinimized">
+                <button
+                    type="button"
+                    @click="toggleMinimized"
+                    v-if="program.type !== 'welcome'"
+                >
                     <img src="@/assets/images/minimize.png" alt="Minimize" />
                 </button>
                 <button
                     type="button"
                     @click="toggleFullscreen"
-                    v-if="program.type !== 'setup'"
+                    v-if="
+                        program.type !== 'setup' && program.type !== 'welcome'
+                    "
                 >
                     <img
                         v-if="!isFullscreen"
@@ -51,6 +58,7 @@ const { toggleMinimized, closeProgram, toggleFullscreen } = store;
         <SetupWindow v-if="program.type === 'setup'" />
         <ImageWindow v-if="program.type === 'photo'" />
         <FolderWindow v-if="program.type === 'folder'" />
+        <WelcomeWindow v-if="program.type === 'welcome'" />
         <div class="text-editor" v-if="program.type === 'text'">
             <h1>Hello!</h1>
             <p>This website exists for you to get to know me.</p>

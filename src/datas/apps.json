@@ -32,7 +32,7 @@
         "icon": "hibu.png",
         "type": "project",
         "url": "https://hibu.hicaku.com/",
-        "sortApp": 4
+        "sortApp": 5
     },
     {
         "id": 5,
@@ -41,7 +41,7 @@
         "icon": "earthquakes.png",
         "type": "project",
         "url": "https://earthquakes.hicaku.com/",
-        "sortApp": 3
+        "sortApp": 4
     },
     {
         "id": 7,
@@ -51,7 +51,7 @@
         "type": "project",
         "url": "https://calculator.hicaku.com/",
         "isOnStartMenu": true,
-        "sortApp": 5
+        "sortApp": 6
     },
     {
         "id": 8,
@@ -61,7 +61,7 @@
         "type": "project",
         "url": "https://tictactoe.hicaku.com/",
         "isOnStartMenu": true,
-        "sortApp": 6
+        "sortApp": 7
     },
     {
         "id": 9,
@@ -134,5 +134,15 @@
         "url": "https://hikotify.hicaku.com/",
         "isOnStartMenu": true,
         "sortApp": 2
+    },
+    {
+        "id": 17,
+        "name": "Solitaire",
+        "extention": "exe",
+        "icon": "solitaire.png",
+        "type": "project",
+        "url": "https://solitaire.hicaku.com/",
+        "isOnStartMenu": true,
+        "sortApp": 3
     }
 ]
