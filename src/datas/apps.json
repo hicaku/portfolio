@@ -5,7 +5,8 @@
         "extention": "txt",
         "icon": "readme.png",
         "type": "text",
-        "isOnStartMenu": true
+        "isOnStartMenu": true,
+        "sortApp": -1
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "extention": "exe",
         "icon": "setup.png",
         "type": "setup",
-        "isOnStartMenu": true
+        "isOnStartMenu": true,
+        "sortApp": -1
     },
     {
         "id": 3,
@@ -154,5 +156,15 @@
         "url": "https://cv.hicaku.com/",
         "isOnStartMenu": true,
         "sortApp": 3
+    },
+    {
+        "id": 19,
+        "name": "NBA",
+        "extention": "exe",
+        "icon": "nba.png",
+        "type": "project",
+        "url": "https://nba.hicaku.com/",
+        "isOnStartMenu": true,
+        "sortApp": 9
     }
 ]

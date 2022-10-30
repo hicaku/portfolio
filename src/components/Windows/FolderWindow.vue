@@ -16,7 +16,7 @@ const { openProgram } = store;
                 @click="openProgram(app)"
             >
                 <div class="folder-window__apps-item-icon">
-                    <img :src="app.icon" />
+                    <img :src="'../../src/assets/images/' + app.icon" />
                 </div>
                 <div class="folder-window__apps-item-name">
                     <p>

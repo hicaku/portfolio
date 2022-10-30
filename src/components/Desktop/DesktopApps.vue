@@ -16,7 +16,7 @@ const { openProgram, downloadCV } = store;
                 @click="openProgram(app)"
             >
                 <div class="desktop-apps__apps-item-icon">
-                    <img :src="app.icon" />
+                    <img :src="'../../src/assets/images/' + app.icon" />
                 </div>
                 <div class="desktop-apps__apps-item-name">
                     <p>

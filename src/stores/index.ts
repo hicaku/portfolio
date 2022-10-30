@@ -79,10 +79,9 @@ export const useStore = defineStore({
                 );
             }
             return this.apps.sort((a, b) => {
-                if (a.sortApp && b.sortApp) {
-                    return a.sortApp - b.sortApp;
-                }
-                return 0;
+                if (!a.sortApp) return 1;
+                if (!b.sortApp) return -1;
+                return a.sortApp - b.sortApp;
             });
         },
         getStartMenuApps(): App[] {
