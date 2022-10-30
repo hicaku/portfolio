@@ -8,9 +8,7 @@ const { program, isFullscreen } = storeToRefs(store);
 <template>
     <img
         :class="{ fullscreen: isFullscreen }"
-        :src="
-            '../../src/assets/images/' + program.name + '.' + program.extention
-        "
+        :src="program.name + '.' + program.extention"
         :alt="program.name"
     />
 </template>

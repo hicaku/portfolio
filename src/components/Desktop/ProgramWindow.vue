@@ -4,7 +4,7 @@ import { useStore } from "@/stores/index";
 import SetupWindow from "@/components/Windows/SetupWindow.vue";
 import ImageWindow from "@/components/Windows/ImageWindow.vue";
 import FolderWindow from "@/components/Windows/FolderWindow.vue";
-import WelcomeWindow from "../Windows/WelcomeWindow.vue";
+import WelcomeWindow from "@/components/Windows/WelcomeWindow.vue";
 
 const store = useStore();
 const { program, isMinimized, isFullscreen } = storeToRefs(store);

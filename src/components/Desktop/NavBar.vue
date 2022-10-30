@@ -43,7 +43,7 @@ setInterval(getCurrentTime, 5000);
         >
             <img
                 class="navbar__opened-program-icon"
-                :src="'../../src/assets/images/' + program.icon"
+                :src="program.icon"
                 alt="Minimized Icon"
             />
             <p class="navbar__opened-program-name">
@@ -68,7 +68,7 @@ setInterval(getCurrentTime, 5000);
             >
                 <img
                     class="start-menu__content-item-icon"
-                    :src="'../../src/assets/images/' + app.icon"
+                    :src="app.icon"
                     :alt="app.name"
                 />
                 <span class="start-menu__content-item-name">{{
@@ -89,7 +89,7 @@ setInterval(getCurrentTime, 5000);
             >
                 <img
                     class="start-menu__content-item-icon"
-                    :src="'../../src/assets/images/' + app.icon"
+                    :src="app.icon"
                     :alt="app.name"
                 />
                 <span class="start-menu__content-item-name">{{
