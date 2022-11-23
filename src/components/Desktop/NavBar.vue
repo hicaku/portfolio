@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
-import { useStore } from "@/stores/index";
+import { useStore, images } from "@/stores/index";
 
 const store = useStore();
 const {
@@ -43,7 +43,7 @@ setInterval(getCurrentTime, 5000);
         >
             <img
                 class="navbar__opened-program-icon"
-                :src="program.icon"
+                :src="images[program.icon]"
                 alt="Minimized Icon"
             />
             <p class="navbar__opened-program-name">
@@ -68,7 +68,7 @@ setInterval(getCurrentTime, 5000);
             >
                 <img
                     class="start-menu__content-item-icon"
-                    :src="app.icon"
+                    :src="images[app.icon]"
                     :alt="app.name"
                 />
                 <span class="start-menu__content-item-name">{{
@@ -89,7 +89,7 @@ setInterval(getCurrentTime, 5000);
             >
                 <img
                     class="start-menu__content-item-icon"
-                    :src="app.icon"
+                    :src="images[app.icon]"
                     :alt="app.name"
                 />
                 <span class="start-menu__content-item-name">{{

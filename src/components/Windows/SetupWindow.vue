@@ -22,7 +22,7 @@ const { maxSteps, nextStep, prevStep, finishSetup } = store;
             </div>
             <div class="step-window__body-step-content">
                 <img
-                    :src="currentStep.imgSrc"
+                    :src="currentStep.img"
                     alt="banner"
                     class="step-window__body-step-content-banner"
                 />

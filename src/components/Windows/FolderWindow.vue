@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
-import { useStore } from "@/stores/index";
+import { useStore, images } from "@/stores/index";
 
 const store = useStore();
 const { isFullscreen, folderPrograms } = storeToRefs(store);
@@ -16,7 +16,7 @@ const { openProgram } = store;
                 @click="openProgram(app)"
             >
                 <div class="folder-window__apps-item-icon">
-                    <img :src="app.icon" />
+                    <img :src="images[app.icon]" />
                 </div>
                 <div class="folder-window__apps-item-name">
                     <p>

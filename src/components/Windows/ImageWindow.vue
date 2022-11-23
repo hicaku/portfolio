@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
-import { useStore } from "@/stores/index";
+import { useStore, images } from "@/stores/index";
 
 const store = useStore();
 const { program, isFullscreen } = storeToRefs(store);
@@ -8,7 +8,7 @@ const { program, isFullscreen } = storeToRefs(store);
 <template>
     <img
         :class="{ fullscreen: isFullscreen }"
-        :src="program.name + '.' + program.extention"
+        :src="images[program.name]"
         :alt="program.name"
     />
 </template>

@@ -1,6 +1,59 @@
 import { defineStore } from "pinia";
 import Apps from "@/datas/apps.json";
 
+/* ************** IMAGES ************** */
+import photo from "@/assets/images/photo.png";
+import photo1 from "@/assets/images/photo1.jpg";
+import photo2 from "@/assets/images/photo2.jpg";
+import photo3 from "@/assets/images/photo3.jpg";
+import photo4 from "@/assets/images/photo4.jpg";
+import photo5 from "@/assets/images/photo5.jpg";
+import step1 from "@/assets/images/step1.png";
+import step2 from "@/assets/images/step2.png";
+import step3 from "@/assets/images/step3.png";
+import step4 from "@/assets/images/step4.png";
+import solitaire from "@/assets/images/solitaire.png";
+import cv from "@/assets/images/cv.png";
+import nba from "@/assets/images/nba.png";
+import hikotify from "@/assets/images/hikotify.png";
+import linkedin from "@/assets/images/linkedin.png";
+import github from "@/assets/images/github.png";
+import folder from "@/assets/images/folder.png";
+import tictactoe from "@/assets/images/tictactoe.png";
+import calculator from "@/assets/images/calculator.png";
+import earthquakes from "@/assets/images/earthquakes.png";
+import hibu from "@/assets/images/hibu.png";
+import infiniteWordle from "@/assets/images/infinite-wordle.png";
+import setup from "@/assets/images/setup.png";
+import readme from "@/assets/images/readme.png";
+
+export const images = {
+    photo: photo,
+    photo1: photo1,
+    photo2: photo2,
+    photo3: photo3,
+    photo4: photo4,
+    photo5: photo5,
+    step1: step1,
+    step2: step2,
+    step3: step3,
+    step4: step4,
+    solitaire: solitaire,
+    cv: cv,
+    nba: nba,
+    hikotify: hikotify,
+    linkedin: linkedin,
+    github: github,
+    folder: folder,
+    tictactoe: tictactoe,
+    calculator: calculator,
+    earthquakes: earthquakes,
+    hibu: hibu,
+    "infinite-wordle": infiniteWordle,
+    setup: setup,
+    readme: readme,
+} as any;
+/* ************** END of IMAGES ************** */
 interface App {
     id: number;
     name: string;
@@ -16,7 +69,7 @@ interface Step {
     id: number;
     title: string;
     description: string;
-    imgSrc: string;
+    img: any;
 }
 
 export const useStore = defineStore({
@@ -29,25 +82,25 @@ export const useStore = defineStore({
                 title: "Welcome!",
                 description:
                     "At the of setup wizard, you will be able to see my CV.",
-                imgSrc: "setup-banner.png",
+                img: step1,
             },
             {
                 id: 2,
                 title: "Employment History",
                 description: "In short, you can see my employment history.",
-                imgSrc: "employment-banner.png",
+                img: step2,
             },
             {
                 id: 3,
                 title: "Technical Skills",
                 description: "My technical skills can be seen here.",
-                imgSrc: "techstack-banner.png",
+                img: step3,
             },
             {
                 id: 4,
                 title: "Hobbies",
                 description: "My hobbies are listed here.",
-                imgSrc: "hobbies-banner.png",
+                img: step4,
             },
         ],
         searchQuery: "" as string,
@@ -140,35 +193,42 @@ export const useStore = defineStore({
                 this.program = {
                     id: 9,
                     name: "Photographs",
-                    icon: "folder.png",
+                    icon: "folder",
                     type: "folder",
                     children: [
                         {
                             id: 10,
                             name: "photo1",
                             extention: "jpg",
-                            icon: "photo.png",
+                            icon: "photo1",
                             type: "photo",
                         },
                         {
                             id: 11,
                             name: "photo2",
                             extention: "jpg",
-                            icon: "photo.png",
+                            icon: "photo2",
                             type: "photo",
                         },
                         {
                             id: 12,
                             name: "photo3",
                             extention: "jpg",
-                            icon: "photo.png",
+                            icon: "photo3",
                             type: "photo",
                         },
                         {
                             id: 13,
                             name: "photo4",
                             extention: "jpg",
-                            icon: "photo.png",
+                            icon: "photo4",
+                            type: "photo",
+                        },
+                        {
+                            id: 16,
+                            name: "photo5",
+                            extention: "jpg",
+                            icon: "photo5",
                             type: "photo",
                         },
                     ],
